@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="numbers">
+    <span class="digit" id="hours">{{ hours | number : "2.0" }}</span>
+    <span class="colon">:</span>
+    <span class="digit" id="minutes">{{ minutes | number : "2.0" }}</span>
+    <span class="colon">:</span>
+    <span class="digit" id="seconds">{{ seconds | number : "2.0" }}</span>
+    <span class="digit" id="milliseconds">{{
+      milliseconds | number : "2.0"
+    }}</span>
+  </div>
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+    <button (click)="pause()">Pause</button>
+    <button (click)="restart()">Restart</button>
+    <button (click)="save()">Save</button>
+  </div>
+</div>
+<div class="saved">
+  <p *ngFor="let lap of laps; let i = index" class="laps">
+    {{ laps[i][0] + ":" + laps[i][1] + ":" + laps[i][2] + ":" + laps[i][3] }}
+  </p>
+</div>
+<svg
+  id="visual"
+  viewBox="0 0 900 600"
+  width="50vw"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+>
+  <path
+    d="M0 442L21.5 439.3C43 436.7 86 431.3 128.8 423C171.7 414.7 214.3 403.3 257.2 414.7C300 426 343 460 385.8 479.5C428.7 499 471.3 504 514.2 491.8C557 479.7 600 450.3 642.8 432.2C685.7 414 728.3 407 771.2 422.5C814 438 857 476 878.5 495L900 514"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="miter"
+    stroke="#F5A9B8"
+    stroke-width="40"
+  ></path>
+</svg>
+<svg
+  id="visual2"
+  viewBox="0 0 900 600"
+  width="50vw"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+>
+  <path
+    d="M0 442L21.5 439.3C43 436.7 86 431.3 128.8 423C171.7 414.7 214.3 403.3 257.2 414.7C300 426 343 460 385.8 479.5C428.7 499 471.3 504 514.2 491.8C557 479.7 600 450.3 642.8 432.2C685.7 414 728.3 407 771.2 422.5C814 438 857 476 878.5 495L900 514"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="miter"
+    stroke="#F5A9B8"
+    stroke-width="40"
+  ></path>
+</svg>
